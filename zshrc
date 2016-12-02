@@ -37,3 +37,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export TERM="screen-256color"
 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+. ~/python/bin/activate
