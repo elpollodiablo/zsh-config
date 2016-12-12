@@ -39,4 +39,6 @@ export TERM="screen-256color"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-. ~/python/bin/activate
+if [ -f ~/python/bin/activate ]; then 
+	. ~/python/bin/activate;
+fi
