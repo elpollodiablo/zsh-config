@@ -42,3 +42,8 @@ bindkey "^[[1;5D" backward-word
 if [ -f ~/python/bin/activate ]; then 
 	. ~/python/bin/activate;
 fi
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
+if [ -d /Users/${USER}/Library/Android/sdk/platform-tools/ ]; then 
+	export PATH=$PATH:/Users/${USER}/Library/Android/sdk/platform-tools/
+	export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home;
+fi
