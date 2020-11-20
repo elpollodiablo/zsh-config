@@ -47,3 +47,7 @@ if [ -d /Users/${USER}/Library/Android/sdk/platform-tools/ ]; then
 	export PATH=$PATH:/Users/${USER}/Library/Android/sdk/platform-tools/
 	export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home;
 fi
+
+if [ -d ~/things-app ]; then
+	export PATH=$PATH:~/things-app/node_modules/.bin;
+fi
