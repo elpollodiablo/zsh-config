@@ -39,15 +39,15 @@ export TERM="screen-256color"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-if [ -f ~/python/bin/activate ]; then 
-	. ~/python/bin/activate;
+if [ -f ~/python/bin/activate ]; then
+    . ~/python/bin/activate;
 fi
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
-if [ -d /Users/${USER}/Library/Android/sdk/platform-tools/ ]; then 
-	export PATH=$PATH:/Users/${USER}/Library/Android/sdk/platform-tools/
-	export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home;
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin
+if [ -d /Users/${USER}/Library/Android/sdk/platform-tools/ ]; then
+    export PATH=$PATH:/Users/${USER}/Library/Android/sdk/platform-tools/
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home;
 fi
 
-if [ -d ~/workspace/things-app ]; then
-	export PATH=$PATH:~/workspace/things-app/node_modules/.bin;
+if [ -d ~/workspace ]; then
+    export PATH=$PATH:node_modules/.bin;
 fi
