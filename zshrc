@@ -42,12 +42,32 @@ bindkey "^[[1;5D" backward-word
 if [ -f ~/python/bin/activate ]; then
     . ~/python/bin/activate;
 fi
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
 if [ -d /Users/${USER}/Library/Android/sdk/platform-tools/ ]; then
     export PATH=$PATH:/Users/${USER}/Library/Android/sdk/platform-tools/
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home;
+    export JAVA_HOME=/usr/local/opt/openjdk@18/;
+    #/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home;
 fi
 
 if [ -d ~/workspace ]; then
     export PATH=$PATH:node_modules/.bin;
 fi
+
+#export PATH="/usr/local/opt/node@14/bin:$PATH"
+#export PATH="/usr/local/opt/node@16/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+nvm use 20
+
+export PATH="/usr/local/opt/openjdk@18/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/philip/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/philip/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/philip/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/philip/google-cloud-sdk/completion.zsh.inc'; fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
